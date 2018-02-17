@@ -153,7 +153,7 @@ This is a Maven project. For the implementation we used Eclipse Java EE ID, Vers
 7. Click Next
 8. Click Finish
 
-If the above step were successful, now you will be have a copy of this project in your IDE, ready to improve or modify it.
+If the above steps were successful, now you will be have a copy of this project in your IDE, ready to improve or modify it.
 
 # Authors
 

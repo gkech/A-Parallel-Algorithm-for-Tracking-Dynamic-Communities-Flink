@@ -84,18 +84,18 @@ Having the `$PATH` set and Flink cluster configured and started, now you can run
 
 # Input Data Format
 
-An example of executing the algorithm can be found in `executeTracking.sh`. Downloading this repository and executing this script after "installing" Apache Flink, will immediately start the algorithm. Nevertheless, for customized execution, one has to modify the inputs of the algorithm, therefore, to modify the contents of `executeTracking.sh`. The inputs of the algorithm are summarized on the table below:
+An example of executing the algorithm can be found in `executeTracking.sh`. Downloading this repository and executing this script after "installing" Apache Flink as descibed above, will immediately start the algorithm with default inputs. Nevertheless, for customized execution, modify the inputs of the algorithm, i.e. modify the contents of `executeTracking.sh`. The inputs of the algorithm are summarized on the table below:
 
 |Option| Flag  | isRequired |hasArgument|  Description |
 | -------------| ------------- | ------------- | ------------- |------------- |
 |Input| -i  | true  | true  |Specify the full path to a dataset.|
 |Output| -o  | true  | true  |Specify the path to the output directory.|
-|Iterations| -t  | false  | true  |Number of times to repeat an experiment. Default value: 1|
+|Iterations| -t  | false  | true  |Set the number of times to repeat an experiment, i.e. how many times the algorithm will run. Default value: 1|
 |Dataset Name| -d  | false  | true  |Set a prefix to the name of the result files. Default value: "default"|
-|Enlarge| -f  | false  | true  |Englarge a 20 timeframes dataset up to 60. This is the highest number of timeframes our method can handle due to Apache Flink's Union transformation limitation. Default value: 1|
+|Enlarge| -f  | false  | true  |Englarge a 20 timeframes dataset up to 60. This is the highest number of timeframes our method can handle due to Apache Flink limitation. Default value: 1|
 |Delete Similarities| -r  | false  | false  |Delete similarities output file to save space.|
 
-Note that the number of times to repeat an experiment (flag `-t`) can be any number bigger than or equal to 1, whereas, the algorithm will throw an `InvalidInputException` if otherwise. Furthermore, the enlargement of an dataset (flag `-f`) considers that the initial dataset contains 20 timeframes. As Apache Flink's Union transformation can handle up to 64 elements, ultimately this means that you can englarge a dataset up to 60 timeframes, that is x3 times. If a dataset contains 10 timeframes, x6 times.
+Note that the repeats of an experiment (flag `-t`) can be any number bigger than or equal to 1, whereas, the algorithm will throw an `InvalidInputException` if otherwise. Furthermore, the enlargement of a dataset (flag `-f`) considers that the initial dataset contains 20 timeframes. As Apache Flink's Union transformation can handle up to 64 elements, ultimately this means that you can englarge a dataset up to 60 timeframes, that is x3 times. If a dataset contains 10 timeframes, x6 times.
 Since we evaluated our method using datasets containing 10 and 20 timeframes, we only allow englargement values [1,3], otherwise a `InvalidInputException` is thrown.
 
 The dataset given as input to the algorithm must adhere to the following JSON template:
@@ -121,8 +121,8 @@ been discovered in each timeframe. An example of a dataset consisting of two tim
 
 ```sh
                                              <-------  community ---------->   <-------  community ---------->
-timeframe:1 --> {"windows":[{"communities":[ [[id1,id2],[id2,id3],[id3,id1]], [[id4,id5],[id5,id6],[id6,id7]] ]
-timeframe:2 --> {"windows":[{"communities":[ [[id8,id9],[id9,id10],[id10,id1]], [[id11, id12],[id12,id13],[id13,id11]] ]
+timeframe:1 --> {"windows":[{"communities":[ [[id1,id2],[id2,id3],[id3,id1]], [[id4,id5],[id5,id6],[id6,id7]] ]},
+timeframe:2 --> {"communities":[ [[id8,id9],[id9,id10],[id10,id1]], [[id11, id12],[id12,id13],[id13,id11]] ] }]}
 ```
 
 # Output Data Format
@@ -143,7 +143,7 @@ timeframe_5,community_0,timeframe_6,community_1,0.3042016806722689
 
 # Building
 
-This is a Maven project. For the implementation we used Eclipse Java EE ID, Version: Neon.3 Release (4.6.3) & Maven plug-in for Eclipse, but any other IDE compatible with maven (e.g. IntelliJ IDEA) will do just as well. To import this project to Eclipse IDE, follow the following simple steps.
+This is a Maven project. For the implementation we used Eclipse Java EE ID, Version: Neon.3 Release (4.6.3) and Maven plug-in for Eclipse, however, any other IDE compatible with maven (e.g. IntelliJ IDEA) probably will do just as well. To import this project to Eclipse IDE, follow the following simple steps.
 
 1. Open Eclipse
 2. Click File > Import
@@ -153,11 +153,11 @@ This is a Maven project. For the implementation we used Eclipse Java EE ID, Vers
 7. Click Next
 8. Click Finish
 
-If the above steps finished successfully, now you will be have a copy of this project in your IDE, ready to improve or modify.
+If the above step were successful, now you will be have a copy of this project in your IDE, ready to improve or modify it.
 
 # Authors
 
-This method is developed by:
+This project is developed by:
 
 Georgios Kechagias, Technical University of Crete, gkechagias@isc.tuc.gr
 

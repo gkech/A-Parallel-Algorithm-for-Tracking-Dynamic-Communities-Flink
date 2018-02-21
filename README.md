@@ -22,11 +22,11 @@ It has been tested on Apache Flink 1.3.2 and 1.4 (latest version: 13/2/2018). Ne
 To successfully execute `executeTracking.sh`, first you have to [download](https://flink.apache.org/downloads.html) Apache Flink and add its directory to `$PATH`. For permanent adding, edit `.bashrc` in your home directory. Then, at the end of the document (for convenience) add one of the following options:
 
 ```bash
-export PATH="/path/to/your/flink/dir:$PATH" # Flink directory is placed first
+export PATH="/path/to/your/flink/bin:$PATH" # Flink directory is placed first
 ```
 
 ```bash
-export PATH="$PATH:/path/to/your/flink/dir" # Flink directory is placed last
+export PATH="$PATH:/path/to/your/flink/bin" # Flink directory is placed last
 ```
 
 Usually `.bashrc` is hidden. To unhide it, go to your home directory and press Ctrl-H. Alternatively, select `Show Hidden Files` from the View menu. 

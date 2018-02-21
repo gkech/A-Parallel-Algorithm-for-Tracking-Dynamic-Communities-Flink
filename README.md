@@ -34,7 +34,7 @@ Usually `.bashrc` is hidden. To unhide it, go to your home directory and press C
 For temporary `$PATH` modification, open a terminal and enter again the following line :
 
 ```bash
-export PATH="/path/to/your/flink/dir:$PATH" # ordering applies here as well 
+export PATH="/path/to/your/flink/bin:$PATH" # ordering applies here as well 
 ```
 
 To check whether `$PATH` has Apache Flink directory, enter the following command:

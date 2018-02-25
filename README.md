@@ -143,7 +143,7 @@ timeframe_5,community_0,timeframe_6,community_1,0.3042016806722689
 
 # Building
 
-This is a Maven project. For the implementation we used Eclipse Java EE ID, Version: Neon.3 Release (4.6.3) and Maven plug-in for Eclipse, however, any other IDE compatible with maven (e.g. IntelliJ IDEA) probably will do just as well. To import this project to Eclipse IDE, follow the following simple steps.
+This is a Maven project. For the implementation we used Eclipse Java EE IDE, Version: Neon.3 Release (4.6.3) and Maven plug-in for Eclipse, however, any other IDE compatible with maven (e.g. IntelliJ IDEA) probably will do just as well. To import this project to Eclipse IDE, follow the following simple steps.
 
 1. Open Eclipse
 2. Click File > Import

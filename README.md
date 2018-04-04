@@ -46,11 +46,11 @@ If you have successfully added Apache Flink directory in the `$PATH`, the path a
 
 ## Configure Apache Flink
 
-To configure the parallelism of the tasks, the amount of memory allocated to task managers etc, you have to modify the confucturation of Apache Flink. All configuration is done in conf/flink-conf.yaml, which is expected to be a flat collection of YAML key value pairs with format `key: value`. 
+To configure the parallelism of the tasks, the amount of memory allocated to task managers etc, you have to modify the confucturation of Apache Flink. All configuration is done in conf/flink-conf.yaml, which is expected to be a flat collection of YAML key-value pairs with format `key: value`. 
 
 All the available configurations of Apache Flink, are contained [here](https://ci.apache.org/projects/flink/flink-docs-release-1.4/ops/config.html#configuration).
 
-For this project, we suggest the configuration of the following keys value pairs:
+For this project, we suggest the configuration of the following key-value pairs:
 1. `taskmanager.heap.mb:`
 2. `taskmanager.numberOfTaskSlots:`
 3. `parallelism.default:`

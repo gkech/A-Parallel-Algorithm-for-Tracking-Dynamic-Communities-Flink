@@ -4,7 +4,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 cd $DIR
 
-#auto create a output directory
+#auto create an output directory
 if [ ! -d output/ ]; then
   mkdir -p output/;
   echo "output foloder created"
